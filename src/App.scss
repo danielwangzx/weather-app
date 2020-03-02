@@ -1,0 +1,35 @@
+.App {
+  text-align: center;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.flex__layout {
+  margin: 2.5em auto;
+  max-width: 60em;
+  max-height: 40em;
+  border: dotted black;
+  overflow: hidden;
+  border-radius: 0.9em;
+
+  &__top{
+    border: dotted red;
+    height: 23em;
+    display: flex;
+    justify-content: space-between;
+  }
+  &__bottom{
+    border: dotted blue;
+    flex: 1;
+    display: flex;
+  }
+}
+

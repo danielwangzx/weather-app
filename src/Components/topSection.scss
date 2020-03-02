@@ -1,0 +1,31 @@
+.local__weather {
+    flex-basis: 35%;
+    &--top{
+        height: 15em;
+        text-align: center;
+        padding-top:5em;
+    }
+    &--bottom{
+        display: flex;
+        height: 6em;
+        margin: 1em auto 1em auto;
+        
+        .local__weather__bottom--left{
+           
+            flex-basis:50%;
+            text-align: center;
+            border-right: grey solid 2px;
+            
+        }
+        .local__weather__bottom--right{
+            flex:1;
+        }
+    }
+
+
+}
+
+.font__weather{
+    font-size: 5em;
+    font-weight: 500;
+}
