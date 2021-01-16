@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-// import logo from './logo.svg';
 import './App.scss';
 import LocalWeather from "./Components/LocalWearther"
 import SearchForm from "./Components/SearchForm"
@@ -10,6 +9,8 @@ import Clear from "./weathericons/Clear.svg"
 import Rain from  "./weathericons/Rain.svg"
 import Clouds from  "./weathericons/Clouds.svg"
 import Snow from "./weathericons/Snow.svg"
+import moment from 'moment-timezone'
+const timeZone = moment.tz.guess().split('/')[1];
 
 
 const API_KEY = "91cd15a3abc7eb94c05f1228dedaf747";
@@ -28,7 +29,7 @@ export default class App extends Component {
 
   componentDidMount(){
     this.setState({
-      city: "sydney",
+      city: timeZone,
       country:"australia",
       isLoading:false,
     },this.axiosCallback
