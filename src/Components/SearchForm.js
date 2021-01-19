@@ -1,9 +1,20 @@
 import React,{useState}from 'react'
 import './SearchForm.scss'
 
+const generateWeahtherName = (weather)=>{
+    switch(weather){
+      case 'Rain':
+      return 'rainy'
+      case 'Clouds':
+      return 'cloudy'
+      case 'Snow':
+      return 'snowy'
+      default:
+      return 'sunny'
+    }
+  }
 
-
-export default function SearchForm({handleSubmit,city,country}) {
+export default function SearchForm({handleSubmit,city,country,weather}) {
     const [inputValue,setInputValue] = useState("")
     const handleChange = (e)=>{
         setInputValue(e.target.value)
@@ -17,7 +28,7 @@ export default function SearchForm({handleSubmit,city,country}) {
     }
 
     return (
-            <div className="search__weather">
+            <div className={`search__weather weather ${generateWeahtherName(weather)}`}>
                 <h2 className="search__location">{formatingString(city)},<span id="country-font">{formatingString(country)}</span></h2>
                 <input type="search" value={inputValue} onChange={handleChange} placeholder="city country" onKeyDown={handleKeyDown}/>
             </div>

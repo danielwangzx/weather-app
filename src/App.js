@@ -97,10 +97,11 @@ export default class App extends Component {
   render() {
     const {weatherArr,tempArr,humidity,wind,city,country} = this.state
     return (
-      <div className="flex__layout">
+      <div className="flex__layout gradient-border">
         <div className="flex__layout__top">
             <LocalWeather temperature={tempArr[0]} weather={weatherArr[0]} humidity={humidity} wind={wind}/>
-            <SearchForm handleSubmit={this.handleSubmit} city={city} country={country}/>  
+            <div className='author-text'><div>A weather site</div><div>by Daniel Wang</div></div>
+            <SearchForm handleSubmit={this.handleSubmit} city={city} country={country} weather={weatherArr[0]}/>  
         </div>
         <div className="flex__layout__bottom">
           <NewsFeed/>
